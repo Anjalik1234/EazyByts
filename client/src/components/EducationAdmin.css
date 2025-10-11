@@ -1,0 +1,172 @@
+/* EducationAdmin.css */
+
+/* Main container */
+.education-admin {
+  min-height: 100vh;
+  background: #0d1117;
+  color: #e6edf3;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Headings */
+.education-admin h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Form styling */
+.admin-form {
+  background: #161b22;
+  border-radius: 16px;
+  padding: 30px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Inputs & textarea */
+.admin-form input,
+.admin-form textarea {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #30363d;
+  background: #0d1117;
+  color: #e6edf3;
+  font-size: 15px;
+  width: 100%;
+}
+
+.admin-form textarea {
+  resize: vertical;
+}
+
+/* Form rows for start/end date */
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+/* Submit button */
+.admin-form button {
+  background: #238636;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+.admin-form button:hover {
+  background: #2ea043;
+}
+
+.admin-form button:disabled {
+  background: #444c56;
+  cursor: not-allowed;
+}
+
+/* Divider */
+hr {
+  width: 100%;
+  max-width: 700px;
+  margin: 40px 0;
+  border: 0.5px solid #30363d;
+}
+
+/* Education list */
+.education-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Individual cards */
+.education-card {
+  background: #161b22;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  color: #c9d1d9;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Logo inside card */
+.edu-logo {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #0d1117;
+}
+
+/* Info inside card */
+.edu-info h3 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.edu-info p {
+  font-size: 14px;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+/* Actions buttons */
+.edu-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.edu-actions button {
+  background: #238636;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.edu-actions button:hover {
+  background: #2ea043;
+}
+
+.edu-actions .delete-btn {
+  background: #ff5555;
+}
+
+.edu-actions .delete-btn:hover {
+  background: #ff3333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .education-card {
+    width: 90%;
+  }
+}

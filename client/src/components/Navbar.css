@@ -1,0 +1,49 @@
+.site-header{
+  position:fixed;     /* keep navbar fixed at top on all sections/pages */
+  top:0;
+  left:0;
+  width:100%;
+  height:var(--header-height);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 56px;     /* vertical spacing handled by height variable */
+  gap:20px;
+  z-index:1000;       /* sit above everything including global background */
+  background:linear-gradient(180deg, rgba(7,6,7,0.92), rgba(7,6,7,0.25));
+  backdrop-filter: blur(6px);
+}
+
+/* ensure logo/links remain vertically centered inside the fixed header */
+.logo, .nav-links { height: var(--header-height); display:flex; align-items:center; }
+
+.logo{
+  color:var(--accent);
+  font-weight:700;
+  font-size:20px;
+}
+
+.nav-links{
+  display:flex;
+  gap:34px;
+  align-items:center;
+}
+
+.nav-links a{
+  color:var(--white);
+  opacity:0.95;
+  text-decoration:none;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.nav-links a:hover{ color:var(--accent); transform:translateY(-1px); transition:0.14s; }
+
+.cta{
+  border-radius:28px;
+  padding:10px 18px;
+  border:2px solid rgba(122,59,255,0.7);
+  color:var(--accent);
+  cursor:pointer;
+  text-decoration: none;
+}

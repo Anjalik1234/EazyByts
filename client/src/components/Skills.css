@@ -1,0 +1,71 @@
+.section{  max-width:1200px; margin:0 auto; color:rgba(255,255,255,0.95); }
+.section-title{ font-size:52px; text-align:center; margin-bottom:6px; font-weight:900; }
+.section-sub{ text-align:center; color:rgba(255,255,255,0.6); margin-bottom:40px; }
+
+.skills-grid{ display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:start; }
+.skill-card{ background:rgba(34, 42, 53, 0.397); padding:34px; border-radius:18px; box-shadow: 0 10px 10px rgba(77, 77, 77, 0.6); }
+.skill-card h3{ text-align:center; margin-bottom:18px; font-size:28px; color:rgba(255,255,255,0.9); }
+
+.pill-row{ display:flex; flex-wrap:wrap; gap:14px; justify-content:center; }
+.skill-pill{ background:rgba(255,255,255,0.03); padding:12px 18px; border-radius:12px; border:1px solid rgba(255,255,255,0.06); color:rgba(255,255,255,0.85); font-weight:600; }
+
+/* pill with icon */
+.skill-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  background:rgba(255,255,255,0.03);
+  padding:10px 18px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.06);
+  color:rgba(255,255,255,0.9);
+  font-weight:600;
+  min-width:130px;
+  justify-content:center;
+}
+
+.skill-fa{
+  font-size:20px;
+  color:var(--accent); /* change color if needed */
+  display:inline-block;
+}
+
+.skill-icon{
+  width:22px;
+  height:22px;
+  display:block;
+  object-fit:contain;
+  filter: none; /* adjust if you want monochrome via filter */
+}
+
+/* small name wrapper for spacing/responsive */
+.skill-name{
+  display:inline-block;
+  white-space:nowrap;
+  font-size:15px;
+}
+
+@media (max-width:980px){
+  .skills-grid{ grid-template-columns:1fr; }
+  .section{ padding:60px 28px; }
+}
+
+/* responsive tweaks */
+@media (max-width:640px){
+  .skill-pill{ padding:8px 12px; gap:8px; min-width:110px; }
+  .skill-fa{ font-size:18px; }
+  .skill-name{ font-size:14px; }
+}
+
+.skills-section{
+  /* reduce the large gap that appears above Skills */
+  padding-top: 36px !important;    /* smaller top padding */
+  padding-bottom: 64px;
+  margin-top: 0 !important;        /* ensure no extra margin is applied */
+  min-height: auto !important;     /* avoid taking full viewport space */
+  scroll-margin-top: calc(var(--header-height) + 8px); /* keeps anchor offset correct */
+}
+
+/* Optional: tighten spacing for the grid/title */
+.skills-section .section-title { margin-top: 0; }
+.skills-section .container { margin-top: 0; }

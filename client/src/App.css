@@ -1,0 +1,139 @@
+/* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+:root{
+  --bg:#070607;
+  --muted:#9a9a9a;
+  --accent:#7a3bff;
+  --white:#fff;
+  --header-height: 90px; /* adjust to match Navbar height */
+}
+
+*{box-sizing:border-box}
+html,body,#root,.App{height:100%;margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:var(--white);}
+
+.App {
+  /* text-align: center; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--header-height); /* reserve space for the fixed header so direct anchors (or direct /#skills loads) aren't hidden */
+}
+
+/* .App-logo {
+  height: 40vmin;
+  pointer-events: none;
+} */
+
+/* Remove header spacing on admin page */
+.App.no-header {
+  padding-top: 0;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* smooth scroll and offset for sticky header */
+html{ scroll-behavior:smooth; }
+
+/* ensure sections are not hidden behind the sticky header */
+.section{ scroll-margin-top:90px; }
+/* if your header height differs, adjust the 90px value */
+
+/* smooth scrolling */
+html { scroll-behavior: smooth; }
+
+/* offset so sticky header doesn't cover targets; adjust --header-height if needed */
+:root { --header-height: 90px; }
+#hero, #home, #skills, .section { scroll-margin-top: var(--header-height); }
+
+/* prevent sticky header from covering targets; adjust value to header height */
+#home, #skills, .section { scroll-margin-top: 90px; }
+
+/* full-page layout */
+html,body,#root,.App{ height:100%; margin:0; background:var(--bg); color:#fff; }
+
+/* Global decorative background placed behind everything */
+.App::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background-color:transparent;
+  mix-blend-mode:screen;
+  background-image:
+    radial-gradient(circle at 6% 18%, rgba(255,255,255,0.18) 0 3px, transparent 4px),
+    radial-gradient(circle at 28% 62%, rgba(255,255,255,0.14) 0 3px, transparent 4px),
+    radial-gradient(circle at 48% 28%, rgba(255,255,255,0.10) 0 3px, transparent 4px),
+    radial-gradient(circle at 72% 70%, rgba(255,255,255,0.09) 0 3px, transparent 4px),
+    radial-gradient(circle at 90% 40%, rgba(255,255,255,0.08) 0 3px, transparent 4px),
+    linear-gradient(135deg, rgba(255,255,255,0.02) 0 30%, transparent 30%),
+    linear-gradient(25deg, rgba(255,255,255,0.02) 0 20%, transparent 20%);
+  background-repeat:no-repeat;
+  opacity:1;
+  filter: drop-shadow(0 30px 80px rgba(122,59,255,0.03));
+}
+
+/* ensure app children render above the decorative background */
+.App > * { position:relative; z-index:1; }
+
+/* sticky header sits above everything */
+.site-header{ position:sticky; top:0; z-index:999; }
+
+/* smooth scroll + anchor offset */
+html{ scroll-behavior:smooth; }
+#hero, #skills, .section{ scroll-margin-top: var(--header-height); }
+
+/* only make the real hero fullscreen — don't apply to every section */
+#hero.hero-like,
+.hero.fullscreen {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  padding: 40px 56px;
+}
+
+/* ensure skills uses normal flow (no fullscreen) */
+.skills-section {
+  min-height: auto !important;
+  height: auto !important;
+  padding: 80px 56px !important;
+  display: block !important;
+  align-items: stretch !important;
+}
+
+/* keep projects visible and above decorative background */
+.projects-section{ position:relative; z-index:2; padding:80px 56px; }
+
+/* anchor offset for fixed header */
+:root{ --header-height: 90px; }
+#hero, #skills, #projects, .section{ scroll-margin-top: var(--header-height); }

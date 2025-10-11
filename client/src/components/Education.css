@@ -1,0 +1,172 @@
+.education-section {
+  position: relative;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+  overflow-y: visible;
+  font-family: 'Poppins', sans-serif;
+  padding: 60px 20px 120px;
+  z-index: 1;
+}
+
+/* ----- Title ----- */
+.education-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.education-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 60px;
+}
+
+/* ----- Timeline ----- */
+.timeline {
+  position: relative;
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background: linear-gradient(180deg, #6a00ff, #00bfff);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px rgba(106, 0, 255, 0.6);
+}
+
+/* ----- Timeline Item ----- */
+.timeline-item {
+  width: 50%;
+  position: relative;
+  margin-bottom: 100px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+.timeline-item.left {
+  left: 0;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-content {
+  background: rgba(25, 25, 35, 0.95);
+  padding: 25px 35px;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 0 25px rgba(106, 0, 255, 0.3);
+  border: 1px solid rgba(106, 0, 255, 0.3);
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 35px rgba(0, 191, 255, 0.5);
+}
+
+.timeline-item.left .timeline-content {
+  margin-right: 50px;
+}
+
+.timeline-item.right .timeline-content {
+  margin-left: 50px;
+}
+
+/* ----- Logo ----- */
+.edu-logo img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 2px solid #00bfff;
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
+}
+
+/* ----- Text Styling ----- */
+.timeline-content h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.timeline-content h3 {
+  color: #bbb;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.timeline-content p {
+  margin-top: 10px;
+  color: #ddd;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.timeline-date {
+  display: block;
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+/* ----- Animation ----- */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ----- Background animation ----- */
+.background-animation {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
+  z-index: -1;
+  animation: move 20s linear infinite;
+}
+
+@keyframes move {
+  from { background-position: 0 0; }
+  to { background-position: 80px 80px; }
+}
+
+/* ----- Responsive Design ----- */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 10px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    left: 0;
+    margin-left: 30px;
+  }
+
+  .timeline-item.left .timeline-content,
+  .timeline-item.right .timeline-content {
+    margin: 0 0 30px 30px;
+  }
+}
